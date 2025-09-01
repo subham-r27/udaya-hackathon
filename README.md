@@ -108,4 +108,4 @@ Follow these instructions to get a copy of the project up and running on your lo
 The primary API endpoint for team registration is:
 
 ```http
-POST/api/register/
+POST /api/register/
