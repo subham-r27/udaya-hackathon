@@ -1,100 +1,111 @@
-Udaya Hackathon Registration Portal
+# Udaya Hackathon Registration Portal
+
 A full-stack web application built to manage team registrations for the "Udaya" hackathon. The platform features a responsive frontend built with React and a robust backend powered by Django.
 
-✨ Features
-Team Registration Form: Allows teams of up to 4 members to register for the event.
+---
 
--Dynamic Form Validation: Ensures all required fields are filled correctly before submission.
+## ✨ Features
 
--Real-time Progress Bar: A visual indicator shows the completion status of the registration form.
+-   **Team Registration Form**: Allows teams of up to 4 members to register for the event.
+-   **Dynamic Form Validation**: Ensures all required fields are filled correctly before submission.
+-   **Real-time Progress Bar**: A visual indicator shows the completion status of the registration form.
+-   **Idea Submission**: Participants can upload their ideas in PDF format directly through the form.
+-   **RESTful API**: A clean and efficient API built with Django REST Framework to handle all data operations.
+-   **Optional Email Notifications**: Backend is configured to (optionally) send confirmation emails to registered participants.
 
--Idea Submission: Participants can upload their ideas in PDF format directly through the form.
+---
 
--RESTful API: A clean and efficient API built with Django REST Framework to handle all data operations.
+## 🛠️ Tech Stack
 
--Optional Email Notifications: Backend is configured to (optionally) send confirmation emails to registered participants.
+### Backend
+-   Python
+-   Django
+-   Django REST Framework
 
-🛠️ Tech Stack
-Backend:
+### Frontend
+-   React.js
+-   Tailwind CSS
+-   Axios (for API communication)
 
-Python
-Django
-Django REST Framework
+### Database
+-   SQLite3 (default for development)
 
-Frontend:
+---
 
-React.js
-Tailwind CSS
-Axios (for API communication)
+## 🚀 Getting Started
 
-Database:
-
-SQLite3 (default for development)
-
-🚀 Getting Started
 Follow these instructions to get a copy of the project up and running on your local machine for development and testing purposes.
 
-Prerequisites
-Python 3.8+
+### Prerequisites
 
-Node.js v14+ and npm
+-   Python 3.8+
+-   Node.js v14+ and npm
+-   A virtual environment tool for Python (like `venv`)
 
-A virtual environment tool for Python (like venv)
+### Backend Setup
 
-Backend Setup
-Clone the repository:
+1.  **Clone the repository:**
+    ```bash
+    git clone [https://github.com/subham-r27/udaya-hackathon-app.git](https://github.com/subham-r27/udaya-hackathon-app.git)
+    cd udaya-hackathon-app
+    ```
 
-git clone https://github.com/subham-r27/udaya-hackathon-app.git
-cd udaya-hackathon-app
+2.  **Navigate to the backend directory and create a virtual environment:**
+    ```bash
+    cd backend
+    python -m venv venv
+    ```
 
-Navigate to the backend directory and create a virtual environment:
+3.  **Activate the virtual environment:**
+    -   On Windows:
+        ```bash
+        .\venv\Scripts\activate
+        ```
+    -   On macOS/Linux:
+        ```bash
+        source venv/bin/activate
+        ```
 
-cd backend
-python -m venv venv
+4.  **Install the required Python packages:**
+    ```bash
+    pip install django djangorestframework django-cors-headers qrcode pillow
+    ```
 
-Activate the virtual environment:
+5.  **Apply database migrations:**
+    ```bash
+    python manage.py makemigrations
+    python manage.py migrate
+    ```
 
-On Windows:
+6.  **Run the Django development server:**
+    ```bash
+    python manage.py runserver
+    ```
+    The backend will be running at `http://127.0.0.1:8000`.
 
-.\venv\Scripts\activate
+### Frontend Setup
 
-On macOS/Linux:
+1.  **Navigate to the frontend directory in a new terminal:**
+    ```bash
+    cd frontend
+    ```
 
-source venv/bin/activate
+2.  **Install the required npm packages:**
+    ```bash
+    npm install
+    ```
 
-Install the required Python packages:
+3.  **Run the React development server:**
+    ```bash
+    npm start
+    ```
+    The frontend will open in your browser at `http://localhost:3000`.
 
-pip install django djangorestframework django-cors-headers qrcode pillow
+---
 
-Apply database migrations:
+## 📝 API Endpoint
 
-python manage.py makemigrations
-python manage.py migrate
-
-Run the Django development server:
-
-python manage.py runserver
-
-The backend will be running at http://127.0.0.1:8000.
-
-Frontend Setup
-Navigate to the frontend directory in a new terminal:
-
-cd frontend
-
-Install the required npm packages:
-
-npm install
-
-Run the React development server:
-
-npm start
-
-The frontend will open in your browser at http://localhost:3000.
-
-📝 API Endpoint
 The primary API endpoint for team registration is:
 
+```http
 POST /api/register/
-
-This endpoint accepts multipart/form-data containing the team and participant information.
