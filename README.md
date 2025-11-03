@@ -1,4 +1,4 @@
-# Udaya Hackathon Registration Portal
+# Udaya 1.O 2025 Hackathon Registration Portal
 
 A full-stack web application built to manage team registrations for the "Udaya" hackathon. The platform features a responsive frontend built with React and a robust backend powered by Django.
 
